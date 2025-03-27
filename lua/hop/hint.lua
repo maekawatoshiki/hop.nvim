@@ -105,7 +105,7 @@ function M.set_hint_extmarks(hl_ns, hints, opts)
       vim.api.nvim_buf_set_extmark(hint.jump_target.buffer or 0, hl_ns, hint.jump_target.line, col, {
         virt_text = { { label, "HopNextKey" } },
         virt_text_pos = 'overlay',
-        hl_mode = 'combine',
+        hl_mode = 'blend',
         priority = prio.HINT_PRIO
       })
     else
@@ -114,7 +114,7 @@ function M.set_hint_extmarks(hl_ns, hints, opts)
       vim.api.nvim_buf_set_extmark(hint.jump_target.buffer or 0, hl_ns, hint.jump_target.line, col, {
         virt_text = { { label:sub(1, snd_idx), "HopNextKey1" }, { label:sub(snd_idx + 1), "HopNextKey2" } },
         virt_text_pos = 'overlay',
-        hl_mode = 'combine',
+        hl_mode = 'blend',
         priority = prio.HINT_PRIO
       })
     end
